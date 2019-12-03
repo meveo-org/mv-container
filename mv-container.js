@@ -16,6 +16,8 @@ export class MvContainer extends LitElement {
 
       section {
         min-width: var(--mv-container-min-width, 300px);
+        max-width: var(--mv-container-max-width, 500px);
+        margin: var(--mv-container-margin, 20px auto);
         padding: var(--mv-container-padding, 20px);
         border: var(--mv-container-border, 1px solid #BFBFBF);
         background-color: var(--mv-container-background, #FFFFFF);
