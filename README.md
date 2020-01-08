@@ -7,10 +7,6 @@ MvContainer is a Meveo container component (based on lit-element) that renders a
 - Default styling shows a box with a drop shadow
 - Configurable style
 
-## Dependencies
-
-- [mv-button](https://github.com/meveo-frontend/mv-button)
-
 ## Quick Start
 
 To experiment with the MvContainer component.
