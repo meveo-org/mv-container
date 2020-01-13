@@ -25,4 +25,4 @@ To experiment with the MvContainer component.
 </mv-container>
 ```
 
-You can also check this [demo](https://manaty.net/mv-container/)
+You can also check this [demo](https://container.meveo.org/)
