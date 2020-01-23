@@ -17,6 +17,8 @@ export class MvContainer extends LitElement {
       section {
         min-width: var(--mv-container-min-width, 300px);
         max-width: var(--mv-container-max-width, 500px);
+        min-height: var(--mv-container-min-height, auto);
+        max-height: var(--mv-container-max-height, auto);
         margin: var(--mv-container-margin, 20px auto);
         padding: var(--mv-container-padding, 20px);
         border: var(--mv-container-border, 1px solid #BFBFBF);
@@ -29,7 +31,7 @@ export class MvContainer extends LitElement {
   render() {
     return html`
     <section>
-      <slot> </slot>
+      <slot></slot>
     </section>
     `;
   }
