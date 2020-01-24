@@ -23,7 +23,7 @@ export class MvContainer extends LitElement {
         padding: var(--mv-container-padding, 20px);
         border: var(--mv-container-border, 1px solid #BFBFBF);
         background-color: var(--mv-container-background, #FFFFFF);
-        box-shadow: var(--mv-container-shadow, 10px 10px 5px #aaaaaa);
+        box-shadow: var(--mv-container-shadow, 0 0 13px 0 rgba(42, 42, 42, 0.65));
       }
 		`;
   }
