@@ -3,7 +3,11 @@ import { LitElement, html, css } from "lit-element";
 export class MvContainer extends LitElement {
   static get properties() {
     return {
-      value: { type: String, attribute: true }
+      value: { type: String, attribute: true },
+
+      //  valid theme values are: "light", "dark"
+      //    default: "light"
+      theme: { type: String, attribute: true }
     };
   }
 
@@ -11,7 +15,9 @@ export class MvContainer extends LitElement {
     return css`
 			:host {
 				font-family: var(--font-family, Arial);
-				font-size: var(--font-size-m, 10pt);				
+				font-size: var(--font-size-m, 10pt);
+				--light-background: var(--mv-container-background, #FFFFFF);
+				--dark-background: var(--mv-container-dark-background, #373E48);				
       }
 
       section {
@@ -22,15 +28,28 @@ export class MvContainer extends LitElement {
         margin: var(--mv-container-margin, 20px auto);
         padding: var(--mv-container-padding, 20px);
         border: var(--mv-container-border, 1px solid #BFBFBF);
-        background-color: var(--mv-container-background, #FFFFFF);
+        background-color: var(--background-color);
         box-shadow: var(--mv-container-shadow, 0 0 13px 0 rgba(42, 42, 42, 0.65));
+      }
+      
+      .light {
+        --background-color: var(--light-background);
+      }
+      
+      .dark {
+        --background-color: var(--dark-background);
       }
 		`;
   }
 
+  constructor() {
+    super();
+    this.theme = "light";
+  }
+
   render() {
     return html`
-    <section>
+    <section class="${this.theme}">
       <slot></slot>
     </section>
     `;
