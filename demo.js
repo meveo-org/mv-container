@@ -1,12 +1,10 @@
 import { LitElement, html, css } from "lit-element";
 import "./mv-container.js";
-import "mv-font-awesome";
 
 export class MvContainerDemo extends LitElement {
   static get properties() {
     return {
       value: { type: String, attribute: true },
-      open: { type: Boolean, attribute: true },
       theme: { type: String, attribute: true }
     };
   }
@@ -36,32 +34,40 @@ export class MvContainerDemo extends LitElement {
         --mv-container-padding: 20px 30px;        
       }
       
-      mv-fa[icon="lightbulb"] {
-        font-size: 50px;
+      fieldset > label, label > input {
         cursor: pointer;
-        margin: 20px;
       }
       
-      .theme {
-        display: flex;
-        justify-content: flex-start;
-      }      
+      fieldset {
+        width: 120px;
+        margin-left: 10px;
+        border:2px solid red;
+        -moz-border-radius:8px;
+        -webkit-border-radius:8px;	
+        border-radius:8px;
+        color: #818181;
+      }
+      
+      legend {
+        font-weight: 500;
+        color: red;
+      }
     `;
   }
 
   constructor() {
     super();
-    this.open = true;
     this.theme = "light";
   }
 
   render() {
-    const iconColor = `color: ${this.open ? "yellow" : ""}`;
-    const textColor = `color: ${this.open ? "" : "#FFFFFF"}`;
+    const textColor = `color: ${this.theme === "light" ? "" : "#FFFFFF"}`;
     return html`
-    <div class="theme">
-      <mv-fa icon="lightbulb" style="${iconColor}" @click=${this.toggleLightBulb}></mv-fa>
-    </div>
+    <fieldset>
+      <legend>Theme</legend>
+      <label><input type="radio" name="theme" value="light" checked @change="${this.radioChange}" />Light</label>
+      <label><input type="radio" name="theme" value="dark" @change="${this.radioChange}" />Dark</label>
+    </fieldset>
     <div class="main" style="${textColor}">
       <mv-container .theme="${this.theme}">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu nisl nunc mi ipsum faucibus vitae. Duis ut diam quam nulla. Odio euismod lacinia at quis risus. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Volutpat est velit egestas dui id ornare arcu. Vulputate dignissim suspendisse in est. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Arcu odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. Est placerat in egestas erat imperdiet sed euismod. Ac feugiat sed lectus vestibulum mattis ullamcorper velit. Mauris augue neque gravida in fermentum et. Senectus et netus et malesuada fames ac. Auctor neque vitae tempus quam pellentesque. Lorem ipsum dolor sit amet.</p>
@@ -99,9 +105,9 @@ export class MvContainerDemo extends LitElement {
     `;
   }
 
-  toggleLightBulb = () => {
-    this.open = !this.open;
-    if (this.open) {
+  radioChange = originalEvent => {
+    const { target: { value } } = originalEvent;
+    if (value === "light") {
       this.theme = "light";
     } else {
       this.theme = "dark";

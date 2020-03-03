@@ -13,13 +13,13 @@ export class MvContainer extends LitElement {
 
   static get styles() {
     return css`
-			:host {
-				font-family: var(--font-family, Arial);
-				font-size: var(--font-size-m, 10pt);
-				--light-background: var(--mv-container-background, #FFFFFF);
-				--dark-background: var(--mv-container-dark-background, #373E48);				
+      :host {
+        font-family: var(--font-family, Arial);
+        font-size: var(--font-size-m, 10pt);
+        --light-background: var(--mv-container-background, #FFFFFF);
+        --dark-background: var(--mv-container-dark-background, #373E48);
       }
-
+      
       section {
         min-width: var(--mv-container-min-width, 300px);
         max-width: var(--mv-container-max-width, 500px);
@@ -39,7 +39,7 @@ export class MvContainer extends LitElement {
       .dark {
         --background-color: var(--dark-background);
       }
-		`;
+    `;
   }
 
   constructor() {
