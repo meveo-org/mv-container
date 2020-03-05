@@ -18,6 +18,8 @@ export class MvContainer extends LitElement {
         font-size: var(--font-size-m, 10pt);
         --light-background: var(--mv-container-background, #FFFFFF);
         --dark-background: var(--mv-container-dark-background, #373E48);
+        --light-color: var(--mv-container-light-color, #000000);
+        --dark-color: var(--mv-container-dark-color, #FFFFFF);
       }
       
       section {
@@ -30,14 +32,17 @@ export class MvContainer extends LitElement {
         border: var(--mv-container-border, 1px solid #BFBFBF);
         background-color: var(--background-color);
         box-shadow: var(--mv-container-shadow, 0 0 13px 0 rgba(42, 42, 42, 0.65));
+        color: var(--color);
       }
       
       .light {
         --background-color: var(--light-background);
+        --color: var(--light-color);
       }
       
       .dark {
         --background-color: var(--dark-background);
+        --color: var(--dark-color);
       }
     `;
   }
