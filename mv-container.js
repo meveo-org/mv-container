@@ -36,13 +36,13 @@ export class MvContainer extends LitElement {
       }
       
       .light {
-        --background-color: var(--light-background);
-        --color: var(--light-color);
+        background-color: var(--light-background);
+        color: var(--light-color);
       }
       
       .dark {
-        --background-color: var(--dark-background);
-        --color: var(--dark-color);
+        background-color: var(--dark-background);
+        color: var(--dark-color);
       }
     `;
   }
