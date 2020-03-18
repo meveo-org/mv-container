@@ -30,6 +30,7 @@ export class MvContainer extends LitElement {
         margin: var(--mv-container-margin, 20px auto);
         padding: var(--mv-container-padding, 20px);
         border: var(--mv-container-border, 1px solid #bfbfbf);
+        border-radius: var(--mv-container-border-radius, 5px);
         top: var(--mv-container-top, 0);
         position: var(--mv-container-position, relative);
         background-color: var(--background-color);
